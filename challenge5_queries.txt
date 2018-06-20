@@ -1,0 +1,360 @@
+1. -----------------SHOW INFO FOR EACH TABLE-----------------------
+
+mysql> SELECT * FROM actors;
++----+---------------+-------------+----------+---------------+------------+
+| id | name          | lastname    | nickname | year_of_birth | agent_code |
++----+---------------+-------------+----------+---------------+------------+
+|  1 | Chris         | Evans       | NULL     | 1981-06-13    |        478 |
+|  2 | Robert        | Downey      | Jr.      | 1965-04-04    |       5067 |
+|  3 | Chris         | Hemsworth   | NULL     | 1983-08-11    |        507 |
+|  4 | Tom           | Hiddleston  | Loki     | 1981-02-09    |        407 |
+|  5 | Tom           | Holland     | NULL     | 1996-06-01    |       3076 |
+|  6 | Mark          | Ruffalo     | NULL     | 1967-11-22    |       3071 |
+|  7 | Chris         | Pratt       | NULL     | 1979-06-21    |       3006 |
+|  8 | Benedict      | Cumberbatch | NULL     | 1976-07-19    |       2006 |
+|  9 | Chadwick      | Boseman     | NULL     | 1977-11-29    |       2676 |
+| 10 | Thandie       | Newthon     | NULL     | 1972-11-06    |       1676 |
+| 11 | Steven        | Strait      | NULL     | 1986-03-23    |        676 |
+| 12 | Tom           | Ellis       | NULL     | 1978-11-17    |       4005 |
+| 13 | Millie Bobbie | Brown       | NULL     | 2004-02-19    |        123 |
++----+---------------+-------------+----------+---------------+------------+
+
+mysql> SELECT * FROM actors_movies;
++----+----------+----------+----------+
+| id | movie_id | actor_id | salary   |
++----+----------+----------+----------+
+|  1 |        1 |        2 |  3000000 |
+|  2 |        2 |        6 |  4000000 |
+|  3 |        3 |        2 |  6500000 |
+|  4 |        4 |        3 |  5000000 |
+|  5 |        5 |        1 |  4500000 |
+|  6 |        6 |        2 |  7000000 |
+|  7 |        7 |        2 |  8000000 |
+|  8 |        8 |        4 |  4000000 |
+|  9 |        9 |        1 |  5500000 |
+| 10 |       10 |        7 |  5000000 |
+| 11 |       11 |        4 |  3500000 |
+| 12 |       12 |        1 |  3500000 |
+| 13 |       13 |        8 |  6000000 |
+| 14 |       14 |        7 |  6000000 |
+| 15 |       15 |        5 |  4000000 |
+| 16 |       16 |        6 |  4000000 |
+| 17 |       17 |        9 |  7000000 |
+| 18 |       18 |        5 |  6500000 |
+| 19 |       19 |       11 |  3000000 |
+| 20 |       20 |       10 |  2000000 |
+| 21 |       21 |       12 |  4000000 |
+| 22 |       22 |       13 |  4500000 |
+| 23 |        4 |        4 |  3000000 |
+| 24 |       11 |        1 | 50000000 |
+| 25 |        6 |        1 |  7000000 |
+| 26 |        6 |        4 | 30000000 |
++----+----------+----------+----------+
+
+
+mysql> SELECT * FROM critics;
++----+---------+----------+------------+--------------+
+| id | name    | lastname | login_code | pass         |
++----+---------+----------+------------+--------------+
+|  1 | Taran   | Adarsh   |       5335 | password     |
+|  2 | James   | Agee     |     123456 | passsecure   |
+|  3 | Hollis  | Alpert   |      58954 | login        |
+|  4 | David   | Ansen    |     666666 | crappymovies |
+|  5 | Michael | Atkinson |       3333 | catcatdog    |
++----+---------+----------+------------+--------------+
+
+mysql> SELECT * FROM critics_actorsmovies;
++----+-----------+----------------+--------+------------+--------+------------+
+| id | critic_id | actormovies_id | acting | dedication | talent | expression |
++----+-----------+----------------+--------+------------+--------+------------+
+|  1 |         4 |             13 |      8 |          5 |      7 |          9 |
+|  2 |         3 |             10 |      7 |          6 |      9 |         10 |
+|  3 |         1 |              9 |      9 |          9 |      8 |          8 |
+|  4 |         5 |             22 |      7 |          7 |      7 |          9 |
+|  5 |         2 |             20 |      9 |          5 |      7 |          8 |
++----+-----------+----------------+--------+------------+--------+------------+
+
+mysql> SELECT * FROM critics_movies;
++----+-----------+----------+--------+
+| id | critic_id | movie_id | rating |
++----+-----------+----------+--------+
+|  1 |         1 |        6 |      8 |
+|  2 |         1 |       10 |      9 |
+|  3 |         1 |       20 |      7 |
+|  4 |         2 |       11 |     10 |
+|  5 |         2 |       22 |      7 |
+|  6 |         3 |        2 |      7 |
+|  7 |         4 |       15 |      7 |
+|  8 |         4 |       19 |     10 |
+|  9 |         5 |       10 |      5 |
+| 10 |         5 |       12 |      9 |
++----+-----------+----------+--------+
+
+mysql> SELECT * FROM directors;
++----+---------+-----------+--------+--------------------+
+| id | name    | lastname  | genre  | expertise          |
++----+---------+-----------+--------+--------------------+
+|  1 | Jon     | Favreau   | sci-fi | special effects    |
+|  2 | Louis   | Leterrier | sci-fi | explosions         |
+|  3 | Kenneth | Branagh   | sci-fi | special effects    |
+|  4 | Joe     | Johnston  | sci-fi | drama              |
+|  5 | Shane   | Black     | sci-fi | special effects    |
+|  6 | Alan    | Taylor    | sci-fi | space              |
+|  7 | Joe     | Russo     | sci-fi | bear attacks       |
+|  8 | Joss    | Whedon    | sci-fi | special effects    |
+|  9 | Scott   | Derricson | sci-fi | parralel universes |
+| 10 | James   | Gunn      | sci-fi | special effects    |
+| 11 | Jon     | Watts     | sci-fi | spider webs        |
+| 12 | Taika   | Waititi   | sci-fi | special effects    |
+| 13 | Ryan    | Coogler   | sci-fi | special effects    |
++----+---------+-----------+--------+--------------------+
+
+mysql> SELECT * FROM films;
++----+----------+---------------+--------------------+--------+-------------+-----------------+--------------+----------+
+| id | movie_id | premiere_city | opening_week_sales | format | director_id | director_salary | sequel_group | parts_no |
++----+----------+---------------+--------------------+--------+-------------+-----------------+--------------+----------+
+|  1 |        1 | Los Angeles   |           50000000 |      2 |           1 |          150000 |            1 |        1 |
+|  2 |        2 | Sydney        |          100000000 |      2 |           2 |          110000 |         NULL |     NULL |
+|  3 |        3 | Holywood      |          195000000 |      2 |           1 |          190000 |            1 |        2 |
+|  4 |        4 | Sydney        |          230000000 |      2 |           3 |          220000 |            2 |        1 |
+|  5 |        5 | Los Angeles   |          150000000 |      2 |           4 |          195000 |            3 |        1 |
+|  6 |        6 | Los Angeles   |          195000000 |      2 |           8 |          300000 |            4 |        1 |
+|  7 |        7 | Paris         |          200000000 |      2 |           5 |          190000 |            1 |        3 |
+|  8 |        8 | London        |          240000000 |      2 |           6 |         1500000 |            2 |        2 |
+|  9 |        9 | Los Angeles   |           16300000 |      1 |           7 |         1500000 |            3 |        2 |
+| 10 |       10 | Los Angeles   |           25300000 |      2 |          10 |         1200000 |            5 |        1 |
+| 11 |       11 | Los Angeles   |           26000000 |      2 |           8 |         2000000 |            4 |        2 |
+| 12 |       12 | Los Angeles   |           29000000 |      2 |           7 |         2100000 |            3 |        3 |
+| 13 |       13 | Hong Kong     |           27000000 |      2 |           9 |         2400000 |         NULL |     NULL |
+| 14 |       14 | Tokyo         |           29000000 |      2 |          10 |         2000000 |            5 |        2 |
+| 15 |       15 | Los Angeles   |           29000000 |      2 |          11 |         2900000 |         NULL |     NULL |
+| 16 |       16 | Los Angeles   |           30000000 |      2 |          12 |         2300000 |            2 |        3 |
+| 17 |       17 | Los Angeles   |           33000000 |      2 |          13 |        30000000 |         NULL |     NULL |
+| 18 |       18 | Los Angeles   |           25500000 |      2 |           7 |         2650000 |            4 |        3 |
++----+----------+---------------+--------------------+--------+-------------+-----------------+--------------+----------+
+
+mysql> SELECT * FROM format;
++----+--------+
+| id | format |
++----+--------+
+|  1 | 2D     |
+|  2 | 3D     |
++----+--------+
+
+mysql> SELECT * FROM movies;
++----+-------------------------------------+---------------+---------+---------------+-------------------------+
+| id | name                                | premiere_date | genre   | country       | production              |
++----+-------------------------------------+---------------+---------+---------------+-------------------------+
+|  1 | Iron Man                            | 2008-05-02    | sci-fi  | United States | Marvel                  |
+|  2 | The Incredible Hulk                 | 2008-06-13    | sci-fi  | United States | Marvel                  |
+|  3 | Iron Man 2                          | 2010-05-07    | sci-fi  | United States | Marvel                  |
+|  4 | Thor                                | 2011-05-06    | sci-fi  | United States | Marvel                  |
+|  5 | Captain America: The First Avenger  | 2011-07-22    | sci-fi  | United States | Marvel                  |
+|  6 | Marvel's The Avengers               | 2012-05-04    | sci-fi  | United States | Marvel                  |
+|  7 | Iron Man 3                          | 2013-05-03    | sci-fi  | United States | Marvel                  |
+|  8 | Thor: The Dark World                | 2013-11-08    | sci-fi  | United States | Marvel                  |
+|  9 | Captain America: The Winter Soldier | 2014-04-04    | sci-fi  | United States | Marvel                  |
+| 10 | Guardians of The Galaxy             | 2015-08-01    | sci-fi  | United States | Marvel                  |
+| 11 | Avengers: Age of Ultron             | 2015-05-01    | sci-fi  | United States | Marvel                  |
+| 12 | Captain America: CIvil War          | 2016-05-06    | sci-fi  | United States | Marvel                  |
+| 13 | Doctor Strange                      | 2016-11-04    | sci-fi  | United States | Marvel                  |
+| 14 | Guardians of The Galaxy Vol. 2      | 2017-05-05    | sci-fi  | United States | Marvel                  |
+| 15 | Spider-Man: Homecoming              | 2017-07-07    | sci-fi  | United States | Marvel                  |
+| 16 | Thor: Ragnarok                      | 2017-11-03    | sci-fi  | United States | Marvel                  |
+| 17 | Black Panther                       | 2018-02-16    | sci-fi  | United States | Marvel                  |
+| 18 | Avengers: Infinity War              | 2018-04-27    | sci-fi  | United States | Marvel                  |
+| 19 | The Expanse                         | 2015-12-14    | sci-fi  | United States | Penguin in a Parka      |
+| 20 | Westworld                           | 2016-10-02    | sci-fi  | United States | HBO                     |
+| 21 | Lucifer                             | 2016-01-25    | fantasy | United States | Warner Bros. Television |
+| 22 | Stranger Things                     | 2016-07-15    | sci-fi  | United States | 21 Laps Entertainment   |
++----+-------------------------------------+---------------+---------+---------------+-------------------------+
+
+mysql> SELECT * FROM oscar_winners;
++----+----------+----------+---------------+------------+
+| id | actor_id | movie_id | part_in_movie | award_year |
++----+----------+----------+---------------+------------+
+|  1 |        1 |        4 | Thor          |       2012 |
+|  2 |        8 |       13 | Dr. Strange   |       2017 |
+|  3 |        9 |       17 | Black Panther |       2018 |
+|  4 |        8 |       11 | Dr. Strange   |       2017 |
+|  5 |        7 |       18 | Star Lord     |       2018 |
++----+----------+----------+---------------+------------+
+
+mysql> SELECT * FROM series;
++----+----------+---------------------+-----------+-------------+
+| id | movie_id | tv_station_premiere | series_no | episodes_no |
++----+----------+---------------------+-----------+-------------+
+|  1 |       19 | Sci-Fi Channel      |         3 |          32 |
+|  2 |       20 | HBO                 |         2 |          17 |
+|  3 |       21 | Fox                 |         3 |          57 |
+|  4 |       22 | Netflix             |         2 |          17 |
++----+----------+---------------------+-----------+-------------+
+
+2.a) -----------------SHOW INFO ABOUT MOVIES (NAME, PREMIERE_DATE, GENRE, COUNTRY, PRODUCTION, NO OF ACTORS)-----------------------
+
+mysql> SELECT movies.name, movies.premiere_date, movies.genre, movies.country, movies.production, COUNT(actors_movies.actor_id) as actors_per_movie FROM movies INNER JOIN actors_movies ON movies.id = actors_movies.movie_id GROUP BY movies.id;
++-------------------------------------+---------------+---------+---------------+-------------------------+------------------+
+| name                                | premiere_date | genre   | country       | production              | actors_per_movie |
++-------------------------------------+---------------+---------+---------------+-------------------------+------------------+
+| Iron Man                            | 2008-05-02    | sci-fi  | United States | Marvel                  |                1 |
+| The Incredible Hulk                 | 2008-06-13    | sci-fi  | United States | Marvel                  |                1 |
+| Iron Man 2                          | 2010-05-07    | sci-fi  | United States | Marvel                  |                1 |
+| Thor                                | 2011-05-06    | sci-fi  | United States | Marvel                  |                2 |
+| Captain America: The First Avenger  | 2011-07-22    | sci-fi  | United States | Marvel                  |                1 |
+| Marvel's The Avengers               | 2012-05-04    | sci-fi  | United States | Marvel                  |                3 |
+| Iron Man 3                          | 2013-05-03    | sci-fi  | United States | Marvel                  |                1 |
+| Thor: The Dark World                | 2013-11-08    | sci-fi  | United States | Marvel                  |                1 |
+| Captain America: The Winter Soldier | 2014-04-04    | sci-fi  | United States | Marvel                  |                1 |
+| Guardians of The Galaxy             | 2015-08-01    | sci-fi  | United States | Marvel                  |                1 |
+| Avengers: Age of Ultron             | 2015-05-01    | sci-fi  | United States | Marvel                  |                2 |
+| Captain America: CIvil War          | 2016-05-06    | sci-fi  | United States | Marvel                  |                1 |
+| Doctor Strange                      | 2016-11-04    | sci-fi  | United States | Marvel                  |                1 |
+| Guardians of The Galaxy Vol. 2      | 2017-05-05    | sci-fi  | United States | Marvel                  |                1 |
+| Spider-Man: Homecoming              | 2017-07-07    | sci-fi  | United States | Marvel                  |                1 |
+| Thor: Ragnarok                      | 2017-11-03    | sci-fi  | United States | Marvel                  |                1 |
+| Black Panther                       | 2018-02-16    | sci-fi  | United States | Marvel                  |                1 |
+| Avengers: Infinity War              | 2018-04-27    | sci-fi  | United States | Marvel                  |                1 |
+| The Expanse                         | 2015-12-14    | sci-fi  | United States | Penguin in a Parka      |                1 |
+| Westworld                           | 2016-10-02    | sci-fi  | United States | HBO                     |                1 |
+| Lucifer                             | 2016-01-25    | fantasy | United States | Warner Bros. Television |                1 |
+| Stranger Things                     | 2016-07-15    | sci-fi  | United States | 21 Laps Entertainment   |                1 |
++-------------------------------------+---------------+---------+---------------+-------------------------+------------------+
+
+2.b) -----------------SHOW INFO ABOUT ACTORS (NAME, LAST NAME, NICKNAME, YEAR OF BIRTH, AGENT CODE AND IN HOW MANY MOVIES THEY APPEAR-----------------------
+
+mysql> SELECT actors.name, actors.lastname, actors.nickname, actors.year_of_birth, actors.agent_code, COUNT(*) as movies_played FROM actors INNER JOIN actors_movies ON actors.id = actors_movies.actor_id GROUP BY actors.id;
++---------------+-------------+----------+---------------+------------+---------------+
+| name          | lastname    | nickname | year_of_birth | agent_code | movies_played |
++---------------+-------------+----------+---------------+------------+---------------+
+| Chris         | Evans       | NULL     | 1981-06-13    |        478 |             5 |
+| Robert        | Downey      | Jr.      | 1965-04-04    |       5067 |             4 |
+| Chris         | Hemsworth   | NULL     | 1983-08-11    |        507 |             1 |
+| Tom           | Hiddleston  | Loki     | 1981-02-09    |        407 |             4 |
+| Tom           | Holland     | NULL     | 1996-06-01    |       3076 |             2 |
+| Mark          | Ruffalo     | NULL     | 1967-11-22    |       3071 |             2 |
+| Chris         | Pratt       | NULL     | 1979-06-21    |       3006 |             2 |
+| Benedict      | Cumberbatch | NULL     | 1976-07-19    |       2006 |             1 |
+| Chadwick      | Boseman     | NULL     | 1977-11-29    |       2676 |             1 |
+| Thandie       | Newthon     | NULL     | 1972-11-06    |       1676 |             1 |
+| Steven        | Strait      | NULL     | 1986-03-23    |        676 |             1 |
+| Tom           | Ellis       | NULL     | 1978-11-17    |       4005 |             1 |
+| Millie Bobbie | Brown       | NULL     | 2004-02-19    |        123 |             1 |
++---------------+-------------+----------+---------------+------------+---------------+
+
+2.c) -----------------SHOW ALL FILMS WITH THEIR INFO (PREMIERE CITY, OPENING WEEK SALES, FORMAT) ORDERED BY FORMAT-----------------------
+
+mysql> SELECT movies.name, films.premiere_city, films.opening_week_sales, format.format FROM movies INNER JOIN films ON movies.id = films.movie_id INNER JOIN format ON films.format = format.id ORDER BY films.format ASC;
++-------------------------------------+---------------+--------------------+--------+
+| name                                | premiere_city | opening_week_sales | format |
++-------------------------------------+---------------+--------------------+--------+
+| Captain America: The Winter Soldier | Los Angeles   |           16300000 | 2D     |
+| Guardians of The Galaxy Vol. 2      | Tokyo         |           29000000 | 3D     |
+| Thor: Ragnarok                      | Los Angeles   |           30000000 | 3D     |
+| Avengers: Infinity War              | Los Angeles   |           25500000 | 3D     |
+| The Incredible Hulk                 | Sydney        |          100000000 | 3D     |
+| Thor                                | Sydney        |          230000000 | 3D     |
+| Marvel's The Avengers               | Los Angeles   |          195000000 | 3D     |
+| Thor: The Dark World                | London        |          240000000 | 3D     |
+| Avengers: Age of Ultron             | Los Angeles   |           26000000 | 3D     |
+| Doctor Strange                      | Hong Kong     |           27000000 | 3D     |
+| Spider-Man: Homecoming              | Los Angeles   |           29000000 | 3D     |
+| Black Panther                       | Los Angeles   |           33000000 | 3D     |
+| Iron Man                            | Los Angeles   |           50000000 | 3D     |
+| Iron Man 2                          | Holywood      |          195000000 | 3D     |
+| Captain America: The First Avenger  | Los Angeles   |          150000000 | 3D     |
+| Iron Man 3                          | Paris         |          200000000 | 3D     |
+| Guardians of The Galaxy             | Los Angeles   |           25300000 | 3D     |
+| Captain America: CIvil War          | Los Angeles   |           29000000 | 3D     |
++-------------------------------------+---------------+--------------------+--------+
+
+2.d) -----------------SHOW ALL INFO ABOUT OSCAR WINNERS (FOR WHICH MOVIE THEY ARE AWARDED AN OSCAR, WHICH PART, YEAR OF THE AWARD, NAME, LASTNAME, NICKNAME, YEAR OF BIRTH AND AGENT CODE) ORDERED BY THE YEAR OF THE AWARD, NEWEST AT THE TOP-----------------------
+
+mysql> SELECT actors.name, actors.lastname, actors.nickname, actors.year_of_birth, actors.agent_code, movies.name as movie_name, oscar_winners.part_in_movie, oscar_winners.award_year FROM actors INNER JOIN oscar_winners ON actors.id = oscar_winners.actor_id INNER JOIN movies ON oscar_winners.movie_id = movies.id ORDER BY oscar_winners.award_year DESC;
++----------+-------------+----------+---------------+------------+-------------------------+---------------+------------+
+| name     | lastname    | nickname | year_of_birth | agent_code | movie_name              | part_in_movie | award_year |
++----------+-------------+----------+---------------+------------+-------------------------+---------------+------------+
+| Chadwick | Boseman     | NULL     | 1977-11-29    |       2676 | Black Panther           | Black Panther |       2018 |
+| Chris    | Pratt       | NULL     | 1979-06-21    |       3006 | Avengers: Infinity War  | Star Lord     |       2018 |
+| Benedict | Cumberbatch | NULL     | 1976-07-19    |       2006 | Doctor Strange          | Dr. Strange   |       2017 |
+| Benedict | Cumberbatch | NULL     | 1976-07-19    |       2006 | Avengers: Age of Ultron | Dr. Strange   |       2017 |
+| Chris    | Evans       | NULL     | 1981-06-13    |        478 | Thor                    | Thor          |       2012 |
++----------+-------------+----------+---------------+------------+-------------------------+---------------+------------+
+
+3.a) -----------------SHOW ALL INFO ABOUT THE FILMS, ALONG WITH THE ACTORS THAT ARE PLAYING INTO THEM, ORDERED BY DIRECTOR-----------------------
+
+mysql> SELECT movies.name as movie_name, movies.premiere_date, movies.genre, movies.country, movies.production, actors.name, actors.lastname, actors.nickname, actors.year_of_birth, actors.agent_code, directors.name as director_name, directors.lastname as director_lastname, films.director_salary FROM actors_movies INNER JOIN movies ON movies.id = actors_movies.movie_id INNER JOIN actors ON actors.id = actors_movies.actor_id INNER JOIN films ON movies.id = films.movie_id INNER JOIN directors ON films.director_id = directors.id ORDER BY director_name ASC, director_lastname ASC;
++-------------------------------------+---------------+--------+---------------+------------+----------+-------------+----------+---------------+------------+---------------+-------------------+-----------------+
+| movie_name                          | premiere_date | genre  | country       | production | name     | lastname    | nickname | year_of_birth | agent_code | director_name | director_lastname | director_salary |
++-------------------------------------+---------------+--------+---------------+------------+----------+-------------+----------+---------------+------------+---------------+-------------------+-----------------+
+| Thor: The Dark World                | 2013-11-08    | sci-fi | United States | Marvel     | Tom      | Hiddleston  | Loki     | 1981-02-09    |        407 | Alan          | Taylor            |         1500000 |
+| Guardians of The Galaxy             | 2015-08-01    | sci-fi | United States | Marvel     | Chris    | Pratt       | NULL     | 1979-06-21    |       3006 | James         | Gunn              |         1200000 |
+| Guardians of The Galaxy Vol. 2      | 2017-05-05    | sci-fi | United States | Marvel     | Chris    | Pratt       | NULL     | 1979-06-21    |       3006 | James         | Gunn              |         2000000 |
+| Captain America: The First Avenger  | 2011-07-22    | sci-fi | United States | Marvel     | Chris    | Evans       | NULL     | 1981-06-13    |        478 | Joe           | Johnston          |          195000 |
+| Captain America: The Winter Soldier | 2014-04-04    | sci-fi | United States | Marvel     | Chris    | Evans       | NULL     | 1981-06-13    |        478 | Joe           | Russo             |         1500000 |
+| Captain America: CIvil War          | 2016-05-06    | sci-fi | United States | Marvel     | Chris    | Evans       | NULL     | 1981-06-13    |        478 | Joe           | Russo             |         2100000 |
+| Avengers: Infinity War              | 2018-04-27    | sci-fi | United States | Marvel     | Tom      | Holland     | NULL     | 1996-06-01    |       3076 | Joe           | Russo             |         2650000 |
+| Iron Man                            | 2008-05-02    | sci-fi | United States | Marvel     | Robert   | Downey      | Jr.      | 1965-04-04    |       5067 | Jon           | Favreau           |          150000 |
+| Iron Man 2                          | 2010-05-07    | sci-fi | United States | Marvel     | Robert   | Downey      | Jr.      | 1965-04-04    |       5067 | Jon           | Favreau           |          190000 |
+| Spider-Man: Homecoming              | 2017-07-07    | sci-fi | United States | Marvel     | Tom      | Holland     | NULL     | 1996-06-01    |       3076 | Jon           | Watts             |         2900000 |
+| Marvel's The Avengers               | 2012-05-04    | sci-fi | United States | Marvel     | Robert   | Downey      | Jr.      | 1965-04-04    |       5067 | Joss          | Whedon            |          300000 |
+| Marvel's The Avengers               | 2012-05-04    | sci-fi | United States | Marvel     | Chris    | Evans       | NULL     | 1981-06-13    |        478 | Joss          | Whedon            |          300000 |
+| Marvel's The Avengers               | 2012-05-04    | sci-fi | United States | Marvel     | Tom      | Hiddleston  | Loki     | 1981-02-09    |        407 | Joss          | Whedon            |          300000 |
+| Avengers: Age of Ultron             | 2015-05-01    | sci-fi | United States | Marvel     | Tom      | Hiddleston  | Loki     | 1981-02-09    |        407 | Joss          | Whedon            |         2000000 |
+| Avengers: Age of Ultron             | 2015-05-01    | sci-fi | United States | Marvel     | Chris    | Evans       | NULL     | 1981-06-13    |        478 | Joss          | Whedon            |         2000000 |
+| Thor                                | 2011-05-06    | sci-fi | United States | Marvel     | Chris    | Hemsworth   | NULL     | 1983-08-11    |        507 | Kenneth       | Branagh           |          220000 |
+| Thor                                | 2011-05-06    | sci-fi | United States | Marvel     | Tom      | Hiddleston  | Loki     | 1981-02-09    |        407 | Kenneth       | Branagh           |          220000 |
+| The Incredible Hulk                 | 2008-06-13    | sci-fi | United States | Marvel     | Mark     | Ruffalo     | NULL     | 1967-11-22    |       3071 | Louis         | Leterrier         |          110000 |
+| Black Panther                       | 2018-02-16    | sci-fi | United States | Marvel     | Chadwick | Boseman     | NULL     | 1977-11-29    |       2676 | Ryan          | Coogler           |        30000000 |
+| Doctor Strange                      | 2016-11-04    | sci-fi | United States | Marvel     | Benedict | Cumberbatch | NULL     | 1976-07-19    |       2006 | Scott         | Derricson         |         2400000 |
+| Iron Man 3                          | 2013-05-03    | sci-fi | United States | Marvel     | Robert   | Downey      | Jr.      | 1965-04-04    |       5067 | Shane         | Black             |          190000 |
+| Thor: Ragnarok                      | 2017-11-03    | sci-fi | United States | Marvel     | Mark     | Ruffalo     | NULL     | 1967-11-22    |       3071 | Taika         | Waititi           |         2300000 |
++-------------------------------------+---------------+--------+---------------+------------+----------+-------------+----------+---------------+------------+---------------+-------------------+-----------------+
+
+3.b) -----------------SHOW ALL INFO ABOUT THE ACTORS THAT HAVE RATING LESS THAN THE AVERAGE, ORDERED BY THE RATING DESCENDING-----------------------
+
+mysql> SELECT * FROM ( SELECT actors.name, actors.lastname, actors.nickname, actors.year_of_birth, actors.agent_code, ROUND((critics_actorsmovies.acting + critics_actorsmovies.dedication + critics_actorsmovies.talent + critics_actorsmovies.expression)/4.0, 2) as average_rating FROM critics_actorsmovies INNER JOIN actors_movies ON critics_actorsmovies.actormovies_id = actors_movies.id INNER JOIN actors ON actors_movies.actor_id = actors.id ) as table1 WHERE average_rating < (SELECT AVG(ROUND((critics_actorsmovies.acting + critics_actorsmovies.dedication + critics_actorsmovies.talent + critics_actorsmovies.expression)/4.0, 2)) FROM critics_actorsmovies) ORDER BY average_rating DESC;
++---------------+-------------+----------+---------------+------------+----------------+
+| name          | lastname    | nickname | year_of_birth | agent_code | average_rating |
++---------------+-------------+----------+---------------+------------+----------------+
+| Millie Bobbie | Brown       | NULL     | 2004-02-19    |        123 |           7.50 |
+| Benedict      | Cumberbatch | NULL     | 1976-07-19    |       2006 |           7.25 |
+| Thandie       | Newthon     | NULL     | 1972-11-06    |       1676 |           7.25 |
++---------------+-------------+----------+---------------+------------+----------------+
+
+3.c) -----------------SHOW ALL OSCAR WINNERS OLDER THAN THE AVERAGE AGE OF ALL ACTORS-----------------------
+
+mysql> SELECT * FROM ( SELECT actors.name, actors.lastname, actors.year_of_birth, (SELECT FLOOR(DATEDIFF('2018/06/14', actors.year_of_birth) / 365)) as age FROM actors INNER JOIN oscar_winners ON actors.id = oscar_winners.actor_id WHERE actors.id = oscar_winners.actor_id ) as table1 WHERE age > (SELECT AVG(FLOOR(DATEDIFF('2018/06/14', actors.year_of_birth) / 365)) FROM actors);
++----------+-------------+---------------+------+
+| name     | lastname    | year_of_birth | age  |
++----------+-------------+---------------+------+
+| Chris    | Pratt       | 1979-06-21    |   39 |
+| Benedict | Cumberbatch | 1976-07-19    |   41 |
+| Benedict | Cumberbatch | 1976-07-19    |   41 |
+| Chadwick | Boseman     | 1977-11-29    |   40 |
++----------+-------------+---------------+------+
+
+4.a) -----------------SHOW ALL INFO ON ACTORS SORTED BY THE TOTAL RATING FROM ALL CRITICS-----------------------
+
+mysql> SELECT * FROM ( SELECT actors.name, actors.lastname, actors.nickname, actors.year_of_birth, actors.agent_code, ROUND((critics_actorsmovies.acting + critics_actorsmovies.dedication + critics_actorsmovies.talent + critics_actorsmovies.expression)/4.0, 2) as average_rating FROM critics_actorsmovies INNER JOIN actors_movies ON critics_actorsmovies.actormovies_id = actors_movies.id INNER JOIN actors ON actors_movies.actor_id = actors.id ) as table1 ORDER BY average_rating DESC;
++---------------+-------------+----------+---------------+------------+----------------+
+| name          | lastname    | nickname | year_of_birth | agent_code | average_rating |
++---------------+-------------+----------+---------------+------------+----------------+
+| Chris         | Evans       | NULL     | 1981-06-13    |        478 |           8.50 |
+| Chris         | Pratt       | NULL     | 1979-06-21    |       3006 |           8.00 |
+| Millie Bobbie | Brown       | NULL     | 2004-02-19    |        123 |           7.50 |
+| Benedict      | Cumberbatch | NULL     | 1976-07-19    |       2006 |           7.25 |
+| Thandie       | Newthon     | NULL     | 1972-11-06    |       1676 |           7.25 |
++---------------+-------------+----------+---------------+------------+----------------+
+
+4.b) -----------------SHOW ALL MOVIES THAT HAVE SEQUELS, AND THE RATINGS FOR THOSE MOVIES, THE NAME OF THE CRITIC, AND SORT BY HIGHEST RATING-----------------------
+
+mysql> SELECT movies.name, critics_movies.rating as movie_rating, critics.name, critics.lastname FROM critics_movies INNER JOIN movies ON critics_movies.movie_id = movies.id INNER JOIN critics ON critics_movies.critic_id = critics.id INNER JOIN films ON films.movie_id = movies.id WHERE films.sequel_group LIKE "%" ORDER BY movie_rating DESC;
++----------------------------+--------------+---------+----------+
+| name                       | movie_rating | name    | lastname |
++----------------------------+--------------+---------+----------+
+| Avengers: Age of Ultron    |           10 | James   | Agee     |
+| Captain America: CIvil War |            9 | Michael | Atkinson |
+| Guardians of The Galaxy    |            9 | Taran   | Adarsh   |
+| Marvel's The Avengers      |            8 | Taran   | Adarsh   |
+| Guardians of The Galaxy    |            5 | Michael | Atkinson |
++----------------------------+--------------+---------+----------+
